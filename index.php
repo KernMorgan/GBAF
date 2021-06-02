@@ -1,30 +1,40 @@
 <?php
 session_start();
 ?>
-
-<!DOCTYPE html>
-<html>
-
 <head>
+    <!DOCTYPE html>
     <meta charset="utf-8" />
     <title>GBAF</title>
-    <link rel=“stylesheet” href=“style.css”>
+   	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <h1>GBAF</h1>
+<div class="container">
+       <?php 
+      include 'include/header1.php'; 
+    ?>
+  <div class="start">
+    <p>Première visite? <a href="inscription.php">Cliquez ici</a></p>
     <p>Première visite? <a href="inscription.php">Cliquez ici</a></p>
     <form action="main.php" method="post">
-        <p>Nom d'utilisateur
-            <input type="text" name="username" />
+        <p>
+            <input type="text" name="username" placeholder="Nom d'utilisateur"/>
             <br>
-            Mot de passe
-            <input type="password" name="password" />
+            <input type="password" name="password" placeholder="Mot de passe" />
             <br>
             <input type="submit" value="Valider" />
         </p>
     </form>
     <p> Vous avez oublié votre mot de passe? <a href="passwordchange.php">Cliquez ici</a></p>
-</body>
+</div>
 
+  <?php 
+         include 'include/footer.php'; 
+    ?> 
+</div>
+</body>
 </html>
+
+
+

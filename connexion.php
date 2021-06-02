@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -5,10 +8,15 @@
     <meta charset="utf-8" />
     <title>GBAF</title>
     <link rel=“stylesheet” href=“style.css”>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
+<div class= "container">
+      <?php 
+        include 'include/header1.php'; 
+      ?>
     <?php
     if (isset($_POST['password']) and $_POST['password'] ==  "kangourou") // Si le mot de passe est bon
     {

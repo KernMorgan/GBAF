@@ -1,52 +1,45 @@
 <?php
 session_start();
 ?>
-<!DOCTYPE html>
-<html>
-
 <head>
+    <!DOCTYPE html>
     <meta charset="utf-8" />
-    <title>GBAF</title>
-    <link rel=“stylesheet” href=“style.css”>
+    <title>profile</title>
+   	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
 </head>
 <body>
-<h1>GBAF</h1>
- <form action="profile.php" method="post">
-        <p>Nom
+  <div class= "container">
+    <?php 
+      include 'include/header.php'; 
+    ?> 
+    <div class="start">
+   <form class="form" action="profile.php" method="post">
+        <p>       
             <input type="text" name="nom" value=" <?php echo $_POST['nom'];?>" />
             <br>
-            Prénom
             <input type="text" name="prenom" value=" <?php echo $_POST['prenom'];?>" />
             <br>
-            Nom d'utilisateur
             <input type="text" name="username" value=" <?php echo $_POST['username'];?>" />
             <br>
-            Mot de passe
             <input type="password" name="password" value=" <?php echo $_POST['password'];?>"/>
             <br>
-            Question secrète
             <input type="text" name="question" value=" <?php echo $_POST['question'];?>"/ />
             <br>
-            Réponse á votre question secrète
             <input type="text" name="questionanswer" value=" <?php echo $_POST['questionanswer'];?>"/ />
             <br>
-            <input type="submit" value="Valider" /><a href="index.php">Retournez à l'index</a></p>
+            <input type="submit" value="Valider" />
+            <br>
+            <a href="index.php">Retournez à l'index</a></p>
         </p>
     </form>
+</div>
 </body>
-
-$reponse = $bdd->query('Tapez votre requête SQL ici');
-
-
-
-<?php
-try
-{
-	$bdd = new PDO('mysql:host=localhost;dbname=gbaf;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-}
-catch (Exception $e)
-{
-        die('Erreur : ' . $e->getMessage());
-}
-?>
+  <?php 
+         include 'include/footer.php'; 
+    ?> 
+</div>
+</body>
+</html>
 

@@ -1,6 +1,5 @@
 <?php
 session_start();
-require("include/connectbdd.php");
 ?>
 <head>
     <!DOCTYPE html>
@@ -11,26 +10,20 @@ require("include/connectbdd.php");
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
 </head>
 <body>
- <div class= "container">
+  <div class= "container">
     <?php 
       include 'include/header.php'; 
     ?>
-     <div class="start">
-         <p>Répondez à votre question secrète</p>
-  <br>
-   <?php echo $_POST['question'];?>
-    <input type="text" name="questionanswer" />
-    <br>
-    <input type="submit" value="Valider" />
-  </form>
+    <div class="start">
+<form action="mail.php" method="POST">
+<p>Nom</p> <input type="text" name="name">
+<p>Email</p> <input type="text" name="email">
+<p>Message</p><textarea name="message" rows="6" cols="25"></textarea><br />
+<input type="submit" value="Envoyer">
+</form>
 </div>
     <?php 
       include 'include/footer.php'; 
     ?>   
-    </div>
+  </div>
 </body>
-</html>
-
-
-
-
