@@ -22,8 +22,8 @@ session_start();
 <input type="submit" value="Envoyer">
 </form>
 </div>
-    <?php 
+  </div>
+      <?php 
       include 'include/footer.php'; 
     ?>   
-  </div>
 </body>

@@ -1,10 +1,18 @@
 .container {
     width: 70%;
     margin:auto;
+    min-height: 90vh;
 }
 
 * {
   font-family: 'Roboto', sans-serif;
+}
+
+.logoacteur {
+width: 500px;
+margin: 0 auto;
+display: flex;
+flex-direction: column;
 }
 
 h1,h2
@@ -12,8 +20,14 @@ h1,h2
     text-align: center;
 }
 
+
 p,li {
 font-weight: 300;
+}
+
+header a.center {
+  display: inline-block;
+  margin: auto;
 }
 
 header{
@@ -26,18 +40,14 @@ header{
 
 body {
   position: relative;
+  margin: 0;
+  padding: 0;
 }
 
-body::after {
-  content: '';
-  display: block;
-  height: 50px; /* Set same as footer's height */
-}
+
 
 footer {
-  position: absolute;
-  bottom: 0;
-  width: 70%;
+margin: auto;
   height: 50px;
   text-align: center;
    background-color: #808080;
@@ -53,28 +63,54 @@ a {
 
 .main {
    padding: 20px;
-   background-color: #808080;
+   background-color: #c5c2c2;
    border-radius:15px;
+   
 }
 
 .start {
     text-align: center;
     padding: 2px 2px 2px;
-    background-color: #808080;
+    background-color: #c5c2c2;
     border-radius:15px;
-    width: 30%;
-    position: absolute;
-   top: 50%; 
-   left: 50%; 
-  transform: translate(-50%, -50%);
-  
-
+    width: 50%;
+    margin:auto;
 }
 
-.left-header {
+.separateur {
+  border-bottom: 4px solid #c5c2c2 ;
+  width: 50%;
+  margin: 0  auto;
+}
+
+.left-header {~
+    
     padding: 5px;
-     background-color:#808080;
-     color:white;
+     background-color:#c5c2c2;
      border-radius:15px;
 
 }
+
+input {
+  margin:5px;
+  border-radius: 10px;
+  border:0;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 5px;
+}
+
+.description_acteur{
+font-weight: 300;
+}
+
+#partenaire-list {
+  margin:5px;
+  border-radius: 10px;
+  border:0;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 5px;
+
+}
+

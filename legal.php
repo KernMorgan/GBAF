@@ -80,10 +80,11 @@ Le responsable publication est une personne physique ou une personne morale.<br 
 <h3>11. Lexique.</h3>
 <p>Utilisateur : Internaute se connectant, utilisant le site susnommé.</p>
 <p>Informations personnelles : « les informations qui permettent, sous quelque forme que ce soit, directement ou non, l'identification des personnes physiques auxquelles elles s'appliquent » (article 4 de la loi n° 78-17 du 6 janvier 1978).</p>
+
+</div>
   <?php 
          include 'include/footer.php'; 
     ?> 
 </div>
-</div)
 </body>
 

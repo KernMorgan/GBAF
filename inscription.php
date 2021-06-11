@@ -1,5 +1,6 @@
 <?php
 session_start();
+require("include/connectbdd.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,23 +17,34 @@ session_start();
       <?php 
         include 'include/header1.php'; 
       ?>
+      	<?php //affiche une erreur si pseudo déjà utlisé 
+				if(!empty($_GET['err']) && $_GET['err']== "pseudo")
+				{
+					echo '<p style="color: rgb(252, 116, 106);"><strong> Pseudo déjà utilisé ! </strong></p>'; 
+				}
+				// affiche une validation si tous les champs ne sont pas remplis 
+				if(!empty($_GET['err']) && $_GET['err']== "champs")
+				{
+					echo '<p style="color: rgb(252, 116, 106);"><strong> Veuillez remplir tous les champs. </strong></p>';  
+				}
+				?>
     <div class= "start">
     <p>Bienvenue! Veuillez vous inscrire pour accéder à notre contenu</p>
-    <form action="profile.php" method="post">
+    <form action="inscription_bdd.php" method="post" action="inscription_bdd.php">
         <p>
-            <input type="text" name="nom" placeholder="Nom"/>
+            <input type="text" name="name" placeholder="Nom"/>
             <br>
-            <input type="text" name="prenom" placeholder="Prénom"/>
+            <input type="text" name="surname" placeholder="Prénom"/>
             <br>
             <input type="text" name="username" placeholder=" Nom d'utilisateur"/>
             <br>
-            <input type="password" name="password" placeholder="Mot de passe"/>
+            <input type="password" class= "password" name="password" placeholder="Mot de passe"/>
             <br>
             <input type="text" name="question" placeholder="Question secrète"/>
             <br>
             <input type="text" name="questionanswer" placeholder="Réponse"/>
             <br>
-            <input type="submit" value="Valider" />
+            <input type="submit" name="valider" value="Valider" />
         </p>
     </form>
 </div>
@@ -41,4 +53,5 @@ session_start();
     ?> 
 </div>
 </body>
+
 
