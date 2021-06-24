@@ -1,116 +1,256 @@
-.container {
+  * {
+      font-family: 'Roboto', sans-serif;
+    }
+    
+  .container {
     width: 70%;
     margin:auto;
-    min-height: 90vh;
-}
+    min-height: 94vh;
+  }
 
-* {
-  font-family: 'Roboto', sans-serif;
-}
+    .before{
 
-.logoacteur {
-width: 500px;
-margin: 0 auto;
-display: flex;
-flex-direction: column;
-}
+  }
 
-h1,h2
-{   
-    text-align: center;
-}
-
-
-p,li {
-font-weight: 300;
-}
-
-header a.center {
-  display: inline-block;
-  margin: auto;
-}
-
-header{
+  .partenaire-lien {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+  }
+
+  .partenaire-bouton{
+    background-color: red;
+    color: white;
+    border-radius: 4px;
+    border: none;
+    padding: 5px 15px;
+  }
+
+  .logo-block {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  .logo-acteur {
+
+    width: 400px;
+    margin-right: 40px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  }
+
+  p,li {
+  font-weight: 300;
+  }
+
+  header a.center {
+    display: inline-block;
+    margin: auto;
+  }
+
+  header{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 15px;
+      border-bottom-color: red;
+  }
+
+  body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
+
+
+  footer {  
+    margin: auto;
+    height: 50px;
+    background-color: #808080;
+    display: flex;
     align-items: center;
-    padding-bottom: 15px;
-    border-bottom-color: red;
-}
+    justify-content: center
+  }
 
-body {
-  position: relative;
-  margin: 0;
-  padding: 0;
-}
+  a {
+    outline: none;
+    text-decoration: none;
+    padding: 2px 1px 0;
+    color: #ffffff;
+  }
+  a:hover{
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);  
+  }
 
+  .main {
+    padding: 20px;
+    margin: 40px 0;
+    background-color: #c5c2c2;
+    border-radius:15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);  
+  }
 
+  .main-acteurs{
+    margin-bottom: 10px;
+  }
 
-footer {
-margin: auto;
-  height: 50px;
-  text-align: center;
-   background-color: #808080;
-}
+  .partenaire-card {
+    display: flex;
+    align-items: center;
+    border: 2px solid #c5c2c2;
+    margin-bottom: 40px;
+    padding: 20px;
+    border-radius:15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  }
 
-a {
-  outline: none;
-  text-decoration: none;
-  padding: 2px 1px 0;
-  color: #ffffff;
-}
+  .partenaire-nom {
+    margin: 0;
+    color: #949393; 
+  }
 
+  .partenaire-description {
+    margin-top: 0;
+  }
 
-.main {
-   padding: 20px;
-   background-color: #c5c2c2;
-   border-radius:15px;
-   
-}
-
-.start {
+  .start {
     text-align: center;
     padding: 2px 2px 2px;
     background-color: #c5c2c2;
     border-radius:15px;
     width: 50%;
     margin:auto;
+  }
+
+  .left-header {
+      padding: 10px 25px;
+      background-color:#c5c2c2;
+      border-radius:15px;
+  }
+
+  input {
+    margin:5px;
+    border-radius: 10px;
+    border:0;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 5px;
+  }
+
+  .description_acteur{
+  font-weight: 300;
+  }
+
+  #partenaire-list {
+    margin:5px;
+    border-radius: 10px;
+    border:0;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 5px;
+
+  }
+
+  button{
+    cursor: pointer;
+    outline: 0;
+    color: #AAA;
+
+  }
+
+  i:before {
+    font-size: 30px;
+  }
+
+  .fa-thumbs-up{
+    color: rgb(14, 185, 14);
+  }
+
+  .fa-thumbs-down{
+    color: rgb(196, 16, 16);
+  }
+
+  .commentaire-block {
+    margin: 30px 0;
+    padding: 20px 0;
+  }
+
+  .commentaire-top{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .commentaire-top h3 {
+    margin: 0;
+  }
+
+  .commentaire {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+  }
+
+  .btn {
+    border: none;
+    background-color: white;
+  }
+
+  .form-commentaire {
+    display: flex;
+    margin-right: 20px;
+  }
+
+  .affichage-comm {
+    border: 2px solid #c5c2c2;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius:15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);  
+    font-weight: lighter;
+  }
+
+@media only screen and (min-width : 701px) and (max-width : 1024px)
+{
+
+    p, li {
+      font-size: 10px;
+    }
+
+    .logo-acteur {
+      width: 200px;
+    }
+
+    .partenaire-description{
+      font-size: 10px;
+      line-height: 1.2;
+    }
+
+    .affichage-comm {
+      font-size: 8px;
+    }
+
 }
 
-.separateur {
-  border-bottom: 4px solid #c5c2c2 ;
-  width: 50%;
-  margin: 0  auto;
-}
+@media only screen and (min-width : 320px) and (max-width : 700px)
+{
+  header {
+    display: flex;
+    flex-direction: column;
+  }
 
-.left-header {~
-    
-    padding: 5px;
-     background-color:#c5c2c2;
-     border-radius:15px;
+  .left-header {
+    margin-top: 20px;
+  }
 
-}
+  .partenaire-card{
+    flex-direction: column;
+  }
 
-input {
-  margin:5px;
-  border-radius: 10px;
-  border:0;
-  height: 30px;
-  line-height: 30px;
-  padding: 0 5px;
-}
+  .logo-acteur {
+      width: 300px;
+    }
 
-.description_acteur{
-font-weight: 300;
-}
-
-#partenaire-list {
-  margin:5px;
-  border-radius: 10px;
-  border:0;
-  height: 30px;
-  line-height: 30px;
-  padding: 0 5px;
+  
 
 }
 

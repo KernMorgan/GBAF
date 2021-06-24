@@ -9,11 +9,22 @@ require("include/connectbdd.php");
    	<link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
   <div class= "container">
     <?php 
       include 'include/header.php'; 
+      if (isset($_SESSION['id']) && !empty($_SESSION['id']))
+      {
+        $id = $_SESSION['id'];
+        $req = $bdd->prepare('SELECT * FROM partenaires WHERE id = ?');
+        $req->execute(array($id));
+      }
+      else 
+      {
+        header('Location: index.php');
+      }
     ?>
     <div class= "main">
       <h1>GBAF</h1>
@@ -36,23 +47,28 @@ require("include/connectbdd.php");
       <?php 
         $reponse = $bdd->query('SELECT * FROM partenaires');
         while ($donnees = $reponse->fetch())
-            {
-      ?>
-      <a href='acteurs.php?id=<?php echo $donnees['ID']; ?>'><img class="logoacteur" src="./<?= $donnees['logo'] ?>"></a><p> 
-      <br />
-      <?php echo $donnees['description']; ?><br />
-        </p>
-      <div class="separateur">
-      </div>
-      <?php
-        }
-        $reponse->closeCursor(); //
-      ?>    
-      <?php 
-       include 'include/footer.php'; 
+      {
+        ?>
+        <div class="partenaire-card">
+          <img class="logo-acteur" src="./<?= $donnees['logo'] ?>">
+        <br />
+        <div class="partenaire-info">
+          <h3 class="partenaire-nom"><?php echo $donnees['name']; ?></h3>
+          </br>
+          <p class="partenaire-description"> <?php echo mb_strimwidth($donnees['description'],  0, 110, "..."); ?><br /></p>
+          <div class="partenaire-lien">
+            <a href='acteurs.php?id=<?php echo $donnees['ID']; ?>'><button class= "partenaire-bouton" type="button">Lire la suite</button></a>
+          </div>
+        </div>
+        </div>
+        <?php
+      }
+      $reponse->closeCursor(); //
+        include 'include/footer.php'; 
       ?> 
-  		</div>
+  	</div>
   </div> 
 </body>
+
 
 

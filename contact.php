@@ -12,18 +12,19 @@ session_start();
 <body>
   <div class= "container">
     <?php 
-      include 'include/header.php'; 
+      include 'include/header1.php'; 
     ?>
     <div class="start">
-<form action="mail.php" method="POST">
-<p>Nom</p> <input type="text" name="name">
-<p>Email</p> <input type="text" name="email">
-<p>Message</p><textarea name="message" rows="6" cols="25"></textarea><br />
-<input type="submit" value="Envoyer">
-</form>
-</div>
+      <form action="mail.php" method="POST">
+        <p>Nom</p> <input type="text" name="name">
+        <p>Email</p> <input type="text" name="email">
+        <p>Message</p><textarea name="message" rows="6" cols="25"></textarea><br />
+        <input type="submit" value="Envoyer">
+      </form>
+      <a href="main.php">Retournez à l'accueil</a></p>
+    </div>
   </div>
-      <?php 
-      include 'include/footer.php'; 
-    ?>   
+  <?php 
+    include 'include/footer.php'; 
+  ?>   
 </body>

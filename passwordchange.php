@@ -11,22 +11,23 @@ require("include/connectbdd.php");
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
 </head>
 <body>
- <div class= "container">
+  <div class= "container">
     <?php 
-      include 'include/header.php'; 
+      include 'include/header1.php'; 
     ?>
-     <div class="start">
-  <p>Nom d'utilisateur</p>
-  <form action="passwordquestion.php" method="post">
-    <input type="text" name="username" />
-    <br>
-    <input type="submit" value="Valider" />
-  </form>
-</div>
+    <div class="start">
+      <p>Nom d'utilisateur</p>
+      <form action="passwordquestion.php" method="post">
+        <input type="text" name="username" />
+        <br>
+        <input type="submit" value="Valider" />
+      </form>
+    </div>
+    </div>
     <?php 
       include 'include/footer.php'; 
     ?>   
-    </div>
+ 
 </body>
-</html>
+
     

@@ -15,22 +15,28 @@ session_start();
       include 'include/header1.php'; 
     ?>
     <div class="start">
+      <?php
+	      if(!empty($_GET['err']) && $_GET['err']== "champs")
+	      {
+          echo '<p style="color: rgb(252, 116, 106);"><strong> Veuillez remplir tous les champs. </strong></p>';  
+	      }	
+	    ?>
       <p>Première visite? <a href="inscription.php">Cliquez ici</a></p>
-      <form action="main.php" method="post">
+      <form action="connectuser_bdd.php" method="post">
         <p>
-        <input type="text" name="username" placeholder="Nom d'utilisateur"/>
+        <input type="text" name="username" placeholder=" Nom d'utilisateur"/>
         <br>
-        <input type="password" name="password" placeholder="Mot de passe" />
+        <input type="password" class= "password" name="password" placeholder="Mot de passe"/>
         <br>
-        <input type="submit" value="Valider" />
+        <input type="submit" name="valider" value="Valider" />
         </p>
       </form>
       <p> Vous avez oublié votre mot de passe? <a href="passwordchange.php">Cliquez ici</a></p>
     </div>
+    </div>
     <?php 
-     include 'include/footer.php'; 
+      include 'include/footer.php'; 
     ?> 
-  </div>
 </body>
 
 

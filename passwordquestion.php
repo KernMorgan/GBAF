@@ -11,26 +11,53 @@ require("include/connectbdd.php");
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
 </head>
 <body>
- <div class= "container">
+  <div class= "container">
     <?php 
-      include 'include/header.php'; 
+      include 'include/header1.php';  
+      if (isset($_POST['username']) AND !empty($_POST['username'])) 
+      { 	 
+        $username = htmlspecialchars($_POST['username']);
+	      $requsername = $bdd->prepare("SELECT id FROM users WHERE username = ?");
+	      $requsername->execute(array($username));
+	      $usernameexist = $requsername->rowcount();
+	      if ($usernameexist == 1) 
+        {
+          $username = htmlspecialchars($_POST['username']);
+          $req_quest = $bdd->prepare('SELECT * FROM users WHERE username = :username ');
+          $req_quest-> execute(array(
+          'username' => $username));
+          $resultat = $req_quest->fetch();
+        }
+        else
+        {
+                echo '<p style="color: rgb(252, 116, 106);"><strong>Nom d\'utilisateur introuvable</strong></br>
+              <a href="index.php" style="color: black"> Retour à l\'accueuil à notre site </a></p>'; 
+         exit;
+        }
+      }
+    else 
+    {
+      echo '<p style="color: rgb(252, 116, 106);"><strong> Veuillez renseigner votre nom d\'utilisateur </strong></br>
+      <a href="index.php" style="color: black"> Retour à l\'accueuil à notre site </a></p>'; 
+      exit;
+    }
     ?>
-     <div class="start">
-         <p>Répondez à votre question secrète</p>
-  <br>
-   <?php echo $_POST['question'];?>
-    <input type="text" name="questionanswer" />
-    <br>
-    <input type="submit" value="Valider" />
-  </form>
-</div>
-    <?php 
-      include 'include/footer.php'; 
-    ?>   
-    </div>
+    <div class="start">
+      <form action="verifanswer.php" method="post">
+        <?php
+          echo   $resultat['question'] 
+        ?>  
+        <br>
+        <input type="hidden" name="username" value="<?= $username ?>">
+        <input type="text" name="questionanswer" />
+        <br>
+        <input type="submit" value="Valider" />
+      </form>
+      </div>
+      </div>
+      <?php 
+        include 'include/footer.php'; 
+      ?>   
 </body>
 </html>
-
-
-
 
