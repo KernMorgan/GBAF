@@ -24,7 +24,9 @@ session_start();
       <a href="main.php">Retournez à l'accueil</a></p>
     </div>
   </div>
-  <?php 
-    include 'include/footer.php'; 
-  ?>   
+  <div class="footer-diconnected">
+    <?php
+      include 'include/footer.php'; 
+    ?>   
+  </div>
 </body>

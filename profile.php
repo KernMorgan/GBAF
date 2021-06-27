@@ -40,13 +40,13 @@ require("include/connectbdd.php");
         
         if(isset($_POST['submit']) )
         {
-          if(!empty($_POST['name']) AND !empty($_POST['surname']) AND !empty($_POST['username']) AND !empty($_POST['password']) AND !empty($_POST['question']) AND !empty($_POST['questionanswer']))
+          if(!empty($_POST['name']) AND !empty($_POST['surname']) AND !empty($_POST['username']) AND !empty($_POST['question']) AND !empty($_POST['questionanswer']))
           { 
             $id = $_SESSION['id'];
             $nom = $_POST['name'];
             $prenom = $_POST['surname'];
             $surnom = $_POST['username'];
-            $mdp = $_POST['password'];
+            $mdp = $password;
             $interrogation = $_POST['question'];
             $reponse = $_POST['questionanswer'];
             $modifyprof = $bdd->prepare("UPDATE users SET name = :name, surname = :surname, username = :username, password = :password, question = :question, questionanswer = :questionanswer WHERE id = :id");
@@ -60,6 +60,7 @@ require("include/connectbdd.php");
             'questionanswer' => $reponse,
             ));
             echo '<p style="color: green;"> Votre profil a bien été modifié !</p>';
+            header("Refresh:1.1; url=profile.php");
           }
           else 
           {
@@ -69,17 +70,15 @@ require("include/connectbdd.php");
       ?>        
       <form class="form" action="profile.php" method="post">
         <p>Nom:<br> 
-        <input type="text" name="name" value=" <?php echo $name;?>" />
+        <input type="text" name="name" value="<?php echo $name;?>" />
         <br>Prénom:<br>
-        <input type="text" name="surname" value=" <?php echo $surname;?>" />
+        <input type="text" name="surname" value="<?php echo $surname;?>" />
         <br>Nom d'utilisateur:<br>
-        <input type="text" name="username" value=" <?php echo $username;?>" />
-        <br>Mot de passe:<br>
-        <input type="password" name="password" value=" <?php echo $password;?>"/>
+        <input type="text" name="username" value="<?php echo $username;?>" />
         <br>Question secrète:<br>
-        <input type="text" name="question" value=" <?php echo $question;?>"/ />
+        <input type="text" name="question" value="<?php echo $question;?>"/ />
         <br>Réponse:<br>
-        <input type="text" name="questionanswer" value=" <?php echo $questionanswer;?>"/ />
+        <input type="text" name="questionanswer" value="<?php echo $questionanswer;?>"/ />
         <br>
         <input type="submit" name = "submit" value="Valider" />
         <br>
@@ -88,7 +87,9 @@ require("include/connectbdd.php");
       </form>
     </div>
   </div>
-  <?php 
-  include 'include/footer.php'; 
-  ?>  
+    <div class="footer-diconnected">
+      <?php
+        include 'include/footer.php'; 
+      ?>   
+    </div>
 </body>

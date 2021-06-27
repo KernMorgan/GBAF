@@ -20,7 +20,7 @@
         include 'include/header.php';  
         if (isset($_SESSION['id']) && !empty($_SESSION['id']))
         {     
-          ?>
+      ?>
           <div class= "main main-acteurs">
             <?php
             //on récupère les info du partenaire selon son ID
@@ -39,7 +39,6 @@
               }
               else 
               {
-                header('HTTP/1.0 404 Not Found');
                 echo " Cette page n'existe pas";
                 exit;
               }
@@ -164,22 +163,22 @@
               while ($resultat = $req->fetch())
               {
             ?>
-                <div class="affichage-comm"> 
-                  <?php
-                    echo $resultat['surname']."</br> ". $resultat['date_comment']."</br> ".$resultat['content'];
-                  ?>
-                </div>
+            <div class="affichage-comm"> 
+              <?php
+                echo $resultat['surname']."</br> ". $resultat['date_comment']."</br> ".$resultat['content'];
+              ?>
           </div>
-          <?php 
-              }
-              $req->closeCursor();  
-            }
-            else 
-          {
-            header('Location: 404.php');
+        </div>
+      <?php 
           }
-          include 'include/footer.php'; 
-          ?>  
-     </div>
+          $req->closeCursor();  
+        }
+        else 
+        {
+          header('Location: 404.php');
+        }
+        include 'include/footer.php'; 
+      ?>  
+    </div>
   </div>
 </body>

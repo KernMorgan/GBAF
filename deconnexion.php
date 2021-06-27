@@ -19,10 +19,12 @@
     ?>
     <div class="start">
       <p>Vous êtes déconnecté.</p>
-      <a href="index.php"> Connectez-vous pour accéder à notre site </a>';
+      <a href="index.php"> Connectez-vous pour accéder à notre site </a>
     </div>
-     </div>
-    <?php 
+  </div>
+  <div class="footer-diconnected">
+    <?php
       include 'include/footer.php'; 
     ?>   
+  </div>
 </body>

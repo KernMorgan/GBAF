@@ -13,10 +13,7 @@ session_start();
 <body>
    <div class= "container">
       <?php 
-        include 'include/header.php'; 
-  
-       if (isset($_SESSION['id']) && !empty($_SESSION['id']))
-      {
+        include 'include/header1.php'; 
       ?>
     <div class= "main"
       <h1>Informations légales</h1>
@@ -74,13 +71,8 @@ session_start();
       <p>Utilisateur : Internaute se connectant, utilisant le site susnommé.</p>
       <p>Informations personnelles : « les informations qui permettent, sous quelque forme que ce soit, directement ou non, l'identification des personnes physiques auxquelles elles s'appliquent » (article 4 de la loi n° 78-17 du 6 janvier 1978).</p>
     </div>
-         <?php      
-      }
-      else 
-      {
-        header('Location: index.php');
-      }
-       include 'include/footer.php'; 
+    <?php      
+      include 'include/footer.php'; 
     ?> 
   </div>
 </body>

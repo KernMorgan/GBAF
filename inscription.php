@@ -47,9 +47,11 @@
       </form>
     </div>
     </div>
-    <?php 
-     include 'include/footer.php'; 
-    ?> 
+    <div class="footer-diconnected">
+      <?php
+        include 'include/footer.php'; 
+      ?>   
+    </div>
 </body>
 
 

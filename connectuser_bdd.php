@@ -14,7 +14,7 @@ require("include/connectbdd.php");
       $message = 'Mot de passe incorrect.';
       echo "<SCRIPT> //not showing me this
       alert('$message')
-      window.location.replace('index.php?err=password');
+      window.location.replace('index.php');
       </SCRIPT>";
     }
     else 

@@ -14,6 +14,9 @@ require("include/connectbdd.php");
   <div class= "container">
     <?php 
       include 'include/header1.php';  
+    ?>
+    <div class="start">
+    <?php
       if (isset($_POST['username']) AND !empty($_POST['username'])) 
       { 	 
         $username = htmlspecialchars($_POST['username']);
@@ -31,33 +34,36 @@ require("include/connectbdd.php");
         else
         {
                 echo '<p style="color: rgb(252, 116, 106);"><strong>Nom d\'utilisateur introuvable</strong></br>
-              <a href="index.php" style="color: black"> Retour à l\'accueuil à notre site </a></p>'; 
+              <a href="index.php" "> Retour à l\'accueil à notre site </a></p>'; 
          exit;
         }
       }
     else 
     {
       echo '<p style="color: rgb(252, 116, 106);"><strong> Veuillez renseigner votre nom d\'utilisateur </strong></br>
-      <a href="index.php" style="color: black"> Retour à l\'accueuil à notre site </a></p>'; 
+      <a href="index.php" "> Retour à l\'accueil à notre site </a></p>'; 
       exit;
     }
     ?>
-    <div class="start">
       <form action="verifanswer.php" method="post">
+        <br>
         <?php
           echo   $resultat['question'] 
         ?>  
         <br>
         <input type="hidden" name="username" value="<?= $username ?>">
+        <br>
         <input type="text" name="questionanswer" />
         <br>
         <input type="submit" value="Valider" />
       </form>
       </div>
       </div>
-      <?php 
+    <div class="footer-diconnected">
+      <?php
         include 'include/footer.php'; 
       ?>   
+    </div>
 </body>
 </html>
 

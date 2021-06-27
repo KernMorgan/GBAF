@@ -16,7 +16,7 @@ require("./PHPMailer/src/Exception.php");
 <body>
    <div class= "container">
     <?php 
-      include 'include/header.php';
+      include 'include/header1.php';
 	  ?>  
     <div class="start"> 
 <?php
@@ -52,7 +52,10 @@ try {
 <br>
  <a href="main.php">Retournez à l'accueil</a></p>
 </div>
-  <?php 
-    include 'include/footer.php'; 
-  ?> 
+</div>
+    <div class="footer-diconnected">
+      <?php
+        include 'include/footer.php'; 
+      ?>   
+    </div>
 </body>
